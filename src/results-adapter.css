@@ -1,0 +1,42 @@
+/* Restore the original result tables after the customer API adapter's generic table rules. */
+.ky-public .mobile-public-label,
+.ky-public .mobile-more-toggle { display: none; }
+.ky-public .standard-results-panel .standard-probe-results-table {
+  min-width: 0;
+  table-layout: fixed;
+}
+.ky-public .standard-results-panel .standard-probe-results-table :is(th,td) {
+  min-width: 0;
+  padding: 10px 8px;
+}
+.ky-public .standard-results-panel .single-probe-results-table :is(th,td) { padding-right: 20px; padding-left: 20px; }
+.ky-public .standard-results-panel .single-probe-results-table :is(th,td):nth-child(1) { width: 22%; }
+.ky-public .standard-results-panel .single-probe-results-table :is(th,td):nth-child(2) { width: 22%; padding-right: 12px; padding-left: 12px; }
+.ky-public .standard-results-panel .single-probe-results-table :is(th,td):nth-child(3) { width: 41%; }
+.ky-public .standard-results-panel .single-probe-results-table :is(th,td):nth-child(4) { width: 15%; }
+.ky-public .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(1) { width: 14%; }
+.ky-public .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(2) { width: 20%; }
+.ky-public .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(3) { width: 15%; }
+.ky-public .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(n+4):nth-child(-n+9) { width: 6%; }
+.ky-public .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(10) { width: 15%; }
+.ky-public .standard-results-panel .quality-chart { width: 100%; max-width: 180px; height: 28px; }
+.ky-public .ky-result-tool-menu { max-height: calc(100vh - 16px); overflow-y: auto; }
+.ky-public .ky-result-tool-menu button { display: flex; align-items: center; gap: 5px; width: 100%; padding: 7px 8px; text-align: left; border: 0; background: #fff; color: #373a3c; font-size: 12px; }
+.ky-public .ky-result-tool-menu button:hover { color: var(--blue); background: #f4f7fc; }
+.ky-public .ky-row-error { display: block; max-width: 220px; white-space: normal; color: #a81717; font-size: 11px; }
+.ky-public .trace-table-panel .trace-ptr-value { max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+.ky-public .dns-results-panel .dns-detail-row pre,
+.ky-public .http-results .http-head-detail-row pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .dns-results-panel > .batch-result-table { min-width: 0; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .standard-probe-results-table { min-width: 0; width: 100%; table-layout: fixed; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .standard-probe-results-table :is(th,td):nth-child(n) { min-width: 0; height: 41px; padding: 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 11px; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th,td):nth-child(1) { width: 30%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th,td):nth-child(2) { width: 27%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th,td):nth-child(3) { width: 27%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th,td):nth-child(4) { width: 16%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(n+3):nth-child(-n+8) { display: none; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(1) { width: 48%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(2) { width: 26%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(9) { width: 10%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th,td):nth-child(10) { width: 16%; }

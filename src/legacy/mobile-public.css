@@ -1,0 +1,1759 @@
+html.mobile-responsive-layout {
+  --mobile-header-h: 55px;
+  --mobile-gutter: 15px;
+  --mobile-tool-bg: #e7f0fe;
+  --mobile-result-bg: #f3f5f8;
+  --mobile-card-bg: #fff;
+  --mobile-primary: #2469f0;
+  --mobile-checkbox: #1a7be6;
+  --mobile-text: #333;
+  --mobile-muted: #999;
+  --mobile-soft: #f5f6f7;
+  --mobile-radius: 5px;
+  --mobile-control-h: 44px;
+  overflow-x: clip;
+  background: var(--mobile-result-bg);
+}
+
+html.mobile-responsive-layout body {
+  min-width: 0;
+  overflow-x: clip;
+  background: var(--mobile-result-bg);
+  color: var(--mobile-text);
+}
+
+html.mobile-responsive-layout body:has(.site-nav.mobile-open) {
+  overflow: hidden;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app),
+html.mobile-responsive-layout .public-app:not(.user-app) * {
+  box-sizing: border-box;
+  letter-spacing: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+  background: var(--mobile-result-bg);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(
+  .notice-bar,
+  .site-top-right,
+  .top-ads,
+  .home-ad-grid,
+  .home-foot-ad-grid,
+  .tool-ad-grid,
+  .tool-ad-stack,
+  .tool-content-ad-grid,
+  .public-page-side-ad
+) {
+  display: none !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-top {
+  position: sticky;
+  top: 0;
+  z-index: 1300;
+  height: var(--mobile-header-h);
+  border-bottom: 1px solid #edf0f4;
+  background: #fff;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-top-inner {
+  width: 100%;
+  min-height: var(--mobile-header-h);
+  padding: 0 var(--mobile-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .brand {
+  width: 115px;
+  min-height: 0;
+  flex: 0 0 115px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .brand-logo {
+  width: 115px;
+  max-width: 100%;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-site-menu-toggle {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #46515f;
+  display: grid;
+  grid-template-rows: repeat(3, 2px);
+  align-content: center;
+  gap: 5px;
+  place-items: center;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-site-menu-toggle span {
+  width: 24px;
+  height: 2px;
+  border-radius: 1px;
+  display: block;
+  background: currentColor;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-site-menu-toggle:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid rgba(36, 105, 240, .35);
+  outline-offset: -2px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-nav {
+  position: fixed;
+  top: var(--mobile-header-h);
+  right: 0;
+  bottom: 0;
+  left: auto;
+  z-index: 1250;
+  width: min(340px, 86vw);
+  height: auto;
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: -8px 0 26px rgba(31, 43, 62, .14);
+  transform: translateX(105%);
+  visibility: hidden;
+  transition: transform .18s ease, visibility .18s ease;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-nav.mobile-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-nav-inner {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  padding: 8px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: visible;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-ad-placement {
+  display: grid;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-ad-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d8e0ec;
+  border-radius: 4px;
+  background: #fff;
+  color: #42526a;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1px 4px rgba(51, 65, 85, .08);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-ad-label {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-ad-card img,
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-ad-card video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-ad-card strong {
+  min-width: 0;
+  max-width: 100%;
+  padding: 5px 8px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app .mobile-header-ad {
+  width: min(170px, 100%);
+  max-width: 170px;
+  min-width: 0;
+  height: 40px;
+  margin-left: auto;
+  display: grid;
+  flex: 1 1 auto;
+}
+
+html.mobile-responsive-layout .public-app .mobile-header-ad .mobile-ad-card {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  overflow: hidden;
+  border: 1px solid #d8e0ec;
+  border-radius: 4px;
+  background: #fff;
+  color: #42526a;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1px 4px rgba(51, 65, 85, .08);
+}
+
+html.mobile-responsive-layout .public-app .mobile-header-ad .mobile-ad-card :is(img, video) {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+html.mobile-responsive-layout .public-app .mobile-header-ad .mobile-ad-card strong {
+  min-width: 0;
+  max-width: 100%;
+  padding: 5px 8px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-menu-ad {
+  width: auto;
+  margin: 16px 18px 0;
+  flex: 0 0 auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-menu-ad .mobile-ad-card {
+  width: 100%;
+  min-height: 44px;
+  aspect-ratio: 17 / 5;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-nav-inner > :is(.nav-link, .nav-action, .nav-group),
+html.mobile-responsive-layout .public-app:not(.user-app) .nav-group > .nav-link {
+  width: 100%;
+  min-width: 0;
+  flex: 0 0 auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.nav-link, .nav-action) {
+  min-height: 46px;
+  height: 46px;
+  margin: 0;
+  padding: 0 18px;
+  border: 0;
+  border-bottom: 1px solid #edf0f4;
+  border-radius: 0;
+  justify-content: flex-start;
+  background: #fff;
+  color: #3d4755;
+  font-size: 15px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.nav-link.active, .nav-link:hover, .nav-link:focus-visible, .nav-action:hover, .nav-action:focus-visible) {
+  background: #f2f6fd;
+  color: var(--mobile-primary);
+  box-shadow: inset 3px 0 0 var(--mobile-primary);
+  outline: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .nav-group-chevron {
+  margin-left: auto;
+  transform: rotate(90deg);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .nav-http-badge {
+  position: static;
+  margin-left: 6px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .nav-menu {
+  position: static;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 0 6px;
+  border: 0;
+  background: #f6f8fb;
+  box-shadow: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .nav-menu a {
+  min-height: 40px;
+  height: auto;
+  padding: 9px 18px 9px 42px;
+  color: #5f6a79;
+  font-size: 14px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .nav-menu a:is(:hover, :focus-visible, .active) {
+  background: #eaf1fd;
+  color: var(--mobile-primary);
+  outline: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-nav-backdrop {
+  position: fixed;
+  inset: var(--mobile-header-h) var(--mobile-drawer-width, min(340px, 86vw)) 0 0;
+  z-index: 1200;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: rgba(24, 32, 46, .32);
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-nav-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.site-main, .site-wrap, .public-page-frame, .public-page-content) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-main {
+  padding: 0 0 18px;
+  background: var(--mobile-result-bg);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-wrap {
+  margin: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .breadcrumb {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .article-breadcrumb {
+  display: flex;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .breadcrumb {
+  width: 100%;
+  min-height: 42px;
+  margin: 0;
+  padding: 0 var(--mobile-gutter);
+  gap: 6px;
+  overflow: hidden;
+  background: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .breadcrumb > * {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-layout {
+  width: 100%;
+  max-width: none;
+  gap: 10px;
+  padding: 12px max(68px, calc(env(safe-area-inset-right) + 56px)) 0 var(--mobile-gutter);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-hero-strip {
+  min-height: 0;
+  padding: 16px;
+  border-radius: var(--mobile-radius);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-strip-title h1 {
+  font-size: 20px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-strip-title p {
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-ssr-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-ssr-links a {
+  min-height: 44px;
+  padding: 10px;
+  border-radius: var(--mobile-radius);
+  background: #fff;
+  color: var(--mobile-primary);
+  overflow-wrap: anywhere;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-layout.has-home-main-ads {
+  padding-bottom: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-layout.has-home-main-ads > :not(.home-ad-grid) {
+  transform: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.home-columns, .home-news-grid, .home-tool-entrance-grid, .home-tool-grid, .home-sponsor-grid) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-tool-entrance-grid {
+  margin: 0;
+  gap: 8px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-entry-tool {
+  height: auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-entry-body {
+  width: 100%;
+  height: auto;
+  min-height: 112px;
+  margin: 0;
+  padding: 17px;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 10px;
+  border-radius: var(--mobile-radius);
+  box-shadow: 0 2px 8px rgba(51, 65, 85, .1);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-entry-body strong {
+  max-width: none;
+  margin: 0;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+  line-height: 25px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-entry-icon {
+  position: static;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-entry-body em {
+  position: static;
+  grid-column: 2;
+  justify-self: start;
+  max-width: 100%;
+  height: auto;
+  min-height: 24px;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  white-space: normal;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-entry-body small {
+  grid-column: 1 / -1;
+  overflow-wrap: anywhere;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.home-panel, .home-news-panel, .home-links-panel, .article-console-manual) {
+  border-radius: var(--mobile-radius);
+  box-shadow: 0 2px 8px rgba(51, 65, 85, .1);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-filter-bar {
+  width: 100%;
+  min-height: 0;
+  padding: 8px 4px;
+  flex-wrap: wrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-filter {
+  min-width: 0;
+  height: auto;
+  min-height: 43px;
+  padding: 6px;
+  flex: 1 1 0;
+  font-size: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .home-filter-bar .ad-preview {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-column {
+  width: 100%;
+  min-width: 0;
+  gap: 10px;
+  background: var(--mobile-result-bg);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-tool-tabs {
+  width: 100%;
+  min-height: 42px;
+  margin: 0;
+  padding: 6px var(--mobile-gutter) 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--mobile-tool-bg);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-tool-tabs a {
+  min-width: 0;
+  min-height: 36px;
+  padding: 3px 2px 7px;
+  border-bottom: 2px solid transparent;
+  color: var(--mobile-text);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-tool-tabs a.active {
+  border-bottom-color: var(--mobile-primary);
+  color: var(--mobile-primary);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-content {
+  margin-top: 12px;
+  padding: 16px var(--mobile-gutter) 18px;
+  border-top-width: 2px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.mobile-tool-result-ads, .mobile-tool-summary-ads) {
+  width: auto;
+  max-width: calc(100% - 2 * var(--mobile-gutter));
+  margin: 0 var(--mobile-gutter);
+  padding: 5px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: rgba(69, 90, 100, .3) 0 2px 10px -1px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-tool-summary-ads {
+  margin-top: -8px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.mobile-tool-result-ads, .mobile-tool-summary-ads) .mobile-ad-card {
+  width: 100%;
+  min-height: 50px;
+  aspect-ratio: 17 / 5;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.mobile-tool-result-ads, .mobile-tool-summary-ads) .mobile-ad-label {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  z-index: 2;
+  padding: 3px 5px;
+  display: block;
+  background: rgba(0, 0, 0, .12);
+  color: #fff;
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-ad-pair [data-ad-column="1"] {
+  grid-column: 1;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-ad-pair [data-ad-column="2"] {
+  grid-column: 2;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-content > h1 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-content h2 {
+  margin-bottom: 7px;
+  gap: 7px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-content h2::before {
+  height: 14px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-intro {
+  padding-bottom: 16px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-intro p {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-grid > section {
+  padding-top: 16px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-grid > section:last-child {
+  margin-top: 16px;
+  padding: 16px 0 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-grid ul {
+  padding-left: 18px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-grid li {
+  margin: 3px 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-grid dl > div + div {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-grid dt {
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-grid dd {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-related {
+  margin-top: 16px;
+  padding-top: 16px;
+  font-size: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .tool-seo-related > div {
+  gap: 8px 16px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.compact-probe-card, .find-tool-card, .batch-tool-card) {
+  width: 100%;
+  min-height: 0;
+  margin: -10px 0 0;
+  padding: 13px var(--mobile-gutter) 18px;
+  border: 0;
+  border-radius: 0;
+  background: var(--mobile-tool-bg);
+  box-shadow: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-form {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-form > :is(input:not(.port-input), .probe-input-wrap, .trace-target-wrap) {
+  width: 100%;
+  min-width: 0;
+  flex: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-input-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  overflow: visible;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-input-wrap:has(.target-history-menu) {
+  align-self: stretch;
+  flex-direction: row;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-input-wrap > .target-history-menu,
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .trace-target-wrap > .target-history-menu {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: 0 !important;
+  z-index: 1200;
+  width: 100% !important;
+  max-height: min(42vh, 208px);
+  margin: 0 !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .website-check-input-wrap,
+html.mobile-responsive-layout .public-app:not(.user-app) .website-check-input-wrap:has(.target-history-menu) {
+  position: relative;
+  height: 44px;
+  flex-wrap: nowrap;
+  overflow: visible;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .website-check-input-wrap:has(.target-history-menu) > input {
+  width: auto;
+  flex: 1 1 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .website-check-input-wrap > .target-history-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: -1px;
+  bottom: auto;
+  left: -1px;
+  z-index: 1200;
+  width: auto;
+  max-height: min(42vh, 208px);
+  margin: 0;
+  flex: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-form input {
+  height: var(--mobile-control-h);
+  min-height: var(--mobile-control-h);
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-input-wrap > input:placeholder-shown {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-actions {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:has(.trace-target-wrap) .probe-actions {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card.http-probe-card .probe-actions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card.find-tool-card .probe-actions {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-actions > * {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-actions > .primary {
+  min-width: 0;
+  height: 40px;
+  padding: 0 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-actions > .primary .probe-action-icon:not(.spin) {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-action-mobile-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-actions > :is(.batch-node-default-note, .batch-node-compact, .probe-start-hint) {
+  grid-column: 1 / -1;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-actions > .dns-type-menu {
+  min-width: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-actions > .dns-type-menu > button {
+  width: 100%;
+  height: 40px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card .probe-filter-panel {
+  width: 100%;
+  min-height: 0;
+  margin: 12px 0 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 9px;
+  font-size: 14px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card .probe-actions > :is(.soft-button, .screenshot-button, .screenshot-menu) {
+  height: 40px !important;
+  min-height: 40px;
+  border: 1px solid #b9c9e5;
+  border-radius: 4px;
+  background: #fff !important;
+  color: var(--mobile-primary);
+  box-shadow: none;
+  font-size: 14px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card .probe-actions > :is(.soft-button, .screenshot-button, .screenshot-menu):is(:hover, :focus-visible) {
+  border-color: var(--mobile-primary);
+  background: #f2f6fd !important;
+  color: var(--mobile-primary);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-actions .screenshot-menu {
+  min-height: 40px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-actions .screenshot-menu .screenshot-button {
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.screenshot-button, .screenshot-menu) {
+  display: none !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.probe-line-options, .probe-dns-options) {
+  width: 100%;
+  flex: 0 0 100%;
+  margin: 0;
+  gap: 8px 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-options {
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  padding: 8px;
+  border-radius: 2px;
+  background: #eaf3ff;
+  color: #27364a;
+  align-items: center;
+  gap: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-prefix {
+  display: inline-flex;
+  flex: 0 0 auto;
+  order: 0;
+  color: #26364a;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-option-long {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-option-short {
+  display: inline;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-options label {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 22px;
+  justify-content: center;
+  gap: 1px;
+  font-size: 12px;
+  color: #27364a;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel .probe-line-options input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+  min-height: 13px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-option-all { order: 1; }
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-option-telecom { order: 2; }
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-option-mobile { order: 3; }
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-option-unicom { order: 4; }
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-break {
+  display: none;
+}
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-option-multiline,
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-line-option-overseas { order: 6; }
+
+html.mobile-responsive-layout .public-app .floating-controls .ad-toggle {
+  display: none !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel label {
+  min-height: 24px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel .probe-dns-options {
+  gap: 4px 10px;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel .probe-dns-options label {
+  min-height: 20px;
+  gap: 4px;
+  font-size: 11px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel input[type="checkbox"],
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  min-height: 16px;
+  margin: 0;
+  accent-color: var(--mobile-checkbox);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel input[type="text"],
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel input:not([type]) {
+  width: 100%;
+  height: var(--mobile-control-h);
+  min-height: var(--mobile-control-h);
+  flex: 1 1 100%;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel .probe-dns-options input[type="radio"] {
+  width: 13px;
+  height: 13px;
+  min-height: 13px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-filter-panel .probe-dns-options input[type="text"] {
+  height: 34px;
+  min-height: 34px;
+  padding: 0 9px;
+  font-size: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.http-advanced-panel, .trace-dns-panel, .trace-node-select) {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .trace-node-select {
+  display: block;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .trace-node-panel {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-tool-card {
+  padding-top: 15px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-tool-card .probe-form {
+  width: 100%;
+  padding: 0;
+  gap: 10px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-tool-card textarea {
+  width: 100%;
+  min-height: 132px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-tool-card .probe-actions {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-tool-card .probe-actions > * {
+  min-width: 0;
+  width: 100%;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-tool-card .probe-actions > :is(.batch-node-default-note, .batch-node-compact) {
+  grid-column: 1 / -1;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-node-compact {
+  position: static;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-node-compact::before,
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-node-compact::after {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-node-compact-head {
+  height: auto;
+  min-height: 28px;
+  padding: 0 10px;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-selected-nodes {
+  width: calc(100% - 20px);
+  height: auto;
+  min-height: 74px;
+  max-height: 140px;
+  margin: 8px 10px 0;
+  box-sizing: border-box;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-node-candidates {
+  position: static;
+  width: 100%;
+  max-height: 180px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-start-hint {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 20;
+  order: -1;
+  width: max-content !important;
+  max-width: calc(100vw - 2 * var(--mobile-gutter));
+  padding: 3px 7px !important;
+  justify-self: start;
+  transform: none !important;
+  font-size: 10px !important;
+  line-height: 14px !important;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-start-hint::after {
+  top: 100% !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: 51.5px !important;
+  display: block;
+  border-top-color: #e53935 !important;
+  border-bottom-color: transparent !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-stats-panel, .standard-results-panel, .dns-stats-panel, .dns-results-panel, .http-stats-panel, .http-results, .batch-results-panel, .trace-table-panel, .find-results-panel, .local-results-panel) {
+  width: auto;
+  max-width: calc(100% - 2 * var(--mobile-gutter));
+  margin: 0 var(--mobile-gutter);
+  border: 0;
+  border-radius: var(--mobile-radius);
+  background: var(--mobile-card-bg);
+  box-shadow: 0 2px 8px rgba(51, 65, 85, .1);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .find-results-panel .find-ip-textarea {
+  width: calc(100% - 44px);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-result-head, .standard-stats-head, .dns-result-head, .dns-stats-head, .panel-head) {
+  min-height: 48px;
+  height: auto;
+  margin: 0;
+  padding: 10px 12px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .desktop-public-label {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-public-label {
+  display: inline;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-result-head, .dns-result-head, .http-result-head) > h2 {
+  width: 100%;
+  padding-left: 9px;
+  border-left: 3px solid var(--mobile-primary);
+  font-size: 15px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .result-tabbar {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 2px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .result-tabbar::-webkit-scrollbar {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .result-tabbar button {
+  min-width: max-content;
+  height: 30px;
+  padding: 0 10px;
+  flex: 0 0 auto;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .result-tabbar button.active {
+  border-color: var(--mobile-primary);
+  background: var(--mobile-primary);
+  color: #fff;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-ip-stats, .http-ip-stats, .dns-ip-stats) {
+  padding: 8px 10px 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-stats-panel .standard-stats-head {
+  position: relative !important;
+  display: block !important;
+  min-height: 53px !important;
+  padding: 10px 62px 10px 12px !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-stats-panel .resolve-stats-title {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding-right: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px 8px !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-stats-panel .resolve-stats-title h2 {
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  grid-column: 1;
+  grid-row: 1;
+  white-space: normal !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-stats-panel .resolve-copy-all {
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 4px !important;
+  grid-column: 2;
+  grid-row: 1;
+  gap: 3px !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-stats-panel .cdn-detection-badge {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-stats-panel .standard-stats-head .table-actions {
+  position: absolute !important;
+  top: 10px !important;
+  right: 12px !important;
+  z-index: 2 !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-stats-panel .standard-stats-head .table-actions button {
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-ip-stats {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: visible !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-ip-stats::-webkit-scrollbar {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-ip-stats .standard-ip-stat-row {
+  width: 100% !important;
+  min-width: 0 !important;
+  flex: none !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-ip-stat-row, .http-ip-stat-row, .dns-ip-stat-row) {
+  width: 100%;
+  min-width: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.ip-stat-filter, .dns-ip-stat) {
+  width: 100%;
+  min-height: 32px;
+  border: 0;
+  background: var(--mobile-soft);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-ip-stats, .http-ip-stats) .ip-stat-filter {
+  min-width: 0 !important;
+  padding: 0 7px !important;
+  gap: 4px !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-ip-stats, .http-ip-stats) .ip-stat-address {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-ip-stats, .http-ip-stats) .ip-stat-address > span {
+  min-width: 0;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.standard-ip-stats, .http-ip-stats) .ip-stat-filter em {
+  flex: 0 0 auto;
+  font-size: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .map-summary-grid {
+  width: auto;
+  margin: 0 var(--mobile-gutter);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "map" "region" "stats";
+  gap: 10px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.map-panel-hero, .region-panel-hero, .map-panel, .region-panel, .metrics-panel) {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  border-radius: var(--mobile-radius);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(51, 65, 85, .1);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .map-panel-hero {
+  height: 300px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .echart-map {
+  min-height: 250px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-panel-hero {
+  padding: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-summary-tabs {
+  min-height: 0;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-summary-table {
+  overflow-x: auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-panel-hero .region-summary-table table {
+  height: auto;
+  flex: 0 0 auto;
+  table-layout: fixed;
+  font-size: 11px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-panel-hero .region-summary-table th {
+  height: 36px;
+  padding: 0 4px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-panel-hero .region-summary-table td {
+  height: 54px;
+  padding: 4px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-panel-hero .region-summary-table :is(th, td):nth-child(1) { width: 20%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .region-panel-hero .region-summary-table :is(th, td):nth-child(2) { width: 29%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .region-panel-hero .region-summary-table :is(th, td):nth-child(3) { width: 29%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .region-panel-hero .region-summary-table :is(th, td):nth-child(4) { width: 22%; }
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-summary-table .target-result-demo {
+  width: 100%;
+  min-width: 0;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1px;
+  text-align: center;
+  line-height: 16px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-summary-table :is(.mobile-target-location, .mobile-target-latency) {
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .region-summary-table > .mobile-more-toggle {
+  min-height: 40px;
+  font-size: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-probe-results-table-wrap,
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results-table-wrap,
+html.mobile-responsive-layout .public-app:not(.user-app) .batch-result-table-wrap,
+html.mobile-responsive-layout .public-app:not(.user-app) .trace-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-probe-results-table-wrap {
+  overflow: visible;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .standard-probe-results-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .standard-probe-results-table thead {
+  top: var(--mobile-header-h);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th, td):nth-child(n+5) {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th, td):nth-child(1) { width: 30%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th, td):nth-child(2) { width: 27%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th, td):nth-child(3) { width: 27%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .single-probe-results-table :is(th, td):nth-child(4) { width: 16%; }
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th, td):nth-child(n+3):nth-child(-n+8),
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th, td):nth-child(n+11) {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th, td):nth-child(1) { width: 48%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th, td):nth-child(2) { width: 26%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th, td):nth-child(9) { width: 10%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .continuous-probe-results-table :is(th, td):nth-child(10) { width: 16%; }
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .standard-probe-results-table :is(th, td) {
+  height: 41px;
+  padding: 0 6px;
+  overflow: hidden;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .probe-isp-badge {
+  min-width: 30px;
+  height: 20px;
+  padding: 0 4px;
+  font-size: 10px;
+  line-height: 20px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .standard-results-panel .standard-probe-results-table td:first-child > span {
+  margin-left: 2px;
+  font-size: 11px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-result-ip .ip-cell {
+  width: 100%;
+  padding-right: 0;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-result-ip .real-ip {
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-result-ip .real-ip {
+  font-size: 10px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .probe-result-ip :is(.ip-attribution, .probe-row-tools) {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) [data-mobile-expanded="false"] [data-mobile-overflow] {
+  display: none !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-more-toggle {
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border: 0;
+  border-top: 1px solid #edf1f7;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+  color: #1677ff;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1;
+  appearance: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-more-chevron {
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform .18s ease;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .mobile-more-chevron.is-expanded {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.probe-time-fast, [data-latency-tone="probe-time-fast"]) {
+  color: #0f7a0a !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.probe-time-good, [data-latency-tone="probe-time-good"]) {
+  color: #127332 !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.probe-time-fair, [data-latency-tone="probe-time-fair"]) {
+  color: #566f00 !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.probe-time-slow, [data-latency-tone="probe-time-slow"]) {
+  color: #735f00 !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.probe-time-critical, [data-latency-tone="probe-time-critical"]) {
+  color: #9e4800 !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.probe-time-timeout, [data-latency-tone="probe-time-timeout"]) {
+  color: #a81717 !important;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results tr:not(.http-head-detail-row) :is(th, td):nth-child(n+3):nth-child(-n+5),
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results tr:not(.http-head-detail-row) :is(th, td):nth-child(n+7):nth-child(-n+10) {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results tr:not(.http-head-detail-row) :is(th, td):nth-child(1) { width: 30%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results tr:not(.http-head-detail-row) :is(th, td):nth-child(2) { width: 34%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results tr:not(.http-head-detail-row) :is(th, td):nth-child(6) { width: 19%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results tr:not(.http-head-detail-row) :is(th, td):nth-child(11) { width: 17%; }
+
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results table :is(th, td) {
+  height: 41px;
+  padding: 0 5px;
+  overflow: hidden;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .http-results .http-probe-node-line {
+  gap: 3px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel > table {
+  display: table;
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel > table > :is(thead, tbody) {
+  display: table-row-group;
+  width: auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td):nth-child(2),
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td):nth-child(3),
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td):nth-child(5),
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td):nth-child(8) {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td):nth-child(1) { width: 30%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td):nth-child(4) { width: 37%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td):nth-child(6) { width: 16%; }
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td):nth-child(7) { width: 17%; }
+
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-results-panel tr:not(.dns-detail-row) :is(th, td) {
+  height: 41px;
+  padding: 0 5px;
+  overflow: hidden;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-result-values {
+  min-width: 0;
+  overflow: hidden;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.batch-result-table, .trace-table-wrap table) {
+  min-width: 760px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.feedback-page, .article-detail-layout, .article-list-layout, .help-layout) {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px var(--mobile-gutter) 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .help-side {
+  display: flex;
+  overflow-x: auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .help-side a {
+  min-width: max-content;
+  flex: 0 0 auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.feedback-row, .article-list-item, .article-panel, .article-related-list, .maintain-panel) {
+  border-radius: var(--mobile-radius);
+  box-shadow: 0 2px 8px rgba(51, 65, 85, .1);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .feedback-row {
+  height: auto;
+  min-height: 126px;
+  padding: 16px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .article-breadcrumb {
+  min-height: 42px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .article-list-body {
+  min-height: 0;
+  padding: 15px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .article-list-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .article-content {
+  min-height: 0;
+  padding: 16px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.article-rich-content, .maintain-rich-content) {
+  overflow-wrap: anywhere;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.article-rich-content, .maintain-rich-content) table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .maintain-list {
+  padding: 0 12px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.maintain-item, .maintain-item:first-child, .maintain-item.multi-line:not(:first-child), .maintain-item.has-detail:not(:first-child)) {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+  padding: 20px 0;
+  gap: 10px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .maintain-item::before {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .maintain-date {
+  justify-content: flex-start;
+  padding: 0 4px;
+  gap: 8px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .maintain-item > div:last-child {
+  padding: 0 4px;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.website-check-tool, .dns-propagation-page, .network-diagnostic-page, .local-card-stack) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.website-check-tool, .dns-propagation-page, .network-diagnostic-page) {
+  padding-right: var(--mobile-gutter);
+  padding-left: var(--mobile-gutter);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-propagation-input-page {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .dns-propagation-results-page {
+  margin-top: -10px;
+  border-top: 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .website-check-tool {
+  border: 0;
+  border-radius: 0;
+  background: var(--mobile-tool-bg);
+  box-shadow: none;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-footer {
+  min-height: 0;
+  padding: 14px var(--mobile-gutter) 20px;
+  background: var(--mobile-result-bg);
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app):has(.home-layout) .site-footer {
+  padding-right: max(68px, calc(env(safe-area-inset-right) + 56px));
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-footer-inner {
+  width: 100%;
+  gap: 4px 0;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) .site-footer .split {
+  padding: 0 6px;
+}
+
+html.mobile-responsive-layout .public-app .floating-controls {
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: auto;
+  max-width: calc(100vw - 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+html.mobile-responsive-layout .public-app .floating-control {
+  width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+html.mobile-responsive-layout .public-app .floating-control:hover,
+html.mobile-responsive-layout .public-app .floating-control:focus-visible {
+  width: 44px;
+}
+
+html.mobile-responsive-layout .public-app .floating-control span {
+  display: none;
+}
+
+html.mobile-responsive-layout .public-app .floating-controls small {
+  position: absolute;
+  right: 52px;
+  bottom: 8px;
+  white-space: nowrap;
+}
+
+html.mobile-responsive-layout body .public-locale-controller,
+html.mobile-responsive-layout body:has(.public-app.user-app) .public-locale-controller {
+  position: fixed;
+  top: auto;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(68px, calc(env(safe-area-inset-bottom) + 56px));
+  left: auto;
+}
+
+html.mobile-responsive-layout body .public-locale-controller .public-locale-panel {
+  right: 0;
+  left: auto;
+}
+
+html.mobile-responsive-layout .public-app:not(.user-app) :is(.screenshot-dialog, .batch-copy-dialog) {
+  top: 50%;
+  left: 50%;
+  width: calc(100vw - 24px);
+  max-width: 360px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.mobile-responsive-layout .public-app:not(.user-app) :is(.site-nav, .mobile-nav-backdrop) {
+    transition: none;
+  }
+}

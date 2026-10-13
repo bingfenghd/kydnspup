@@ -1,0 +1,28 @@
+# 复制到同机 Nginx 的站点配置目录前，替换 example.com 和证书路径。
+# 需要提前取得该域名的有效证书；本示例不负责证书申请或续期。
+# 应用 .env 中设置 KY_PUBLIC_ORIGIN=https://example.com、KY_TRUST_LOCAL_PROXY=1。
+server {
+    listen 80;
+    server_name example.com;
+    return 301 https://example.com$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name example.com;
+
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    location / {
+        proxy_pass http://127.0.0.1:4178;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+        proxy_buffering off;
+    }
+}

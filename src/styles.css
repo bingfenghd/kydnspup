@@ -1,0 +1,3 @@
+/* Original DNSPup UI base. Additions specific to the standalone API client live in adapter styles. */
+@import './legacy/styles.css';
+.boot { padding: 36px; color: #687589; }

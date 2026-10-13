@@ -1,0 +1,37 @@
+node_modules/
+dist/
+var/
+.cache/
+.tmp/
+logs/
+artifacts/
+.DS_Store
+.env
+*.log
+backups/
+
+# Private local release and verification material
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-*
+*.db
+*.key
+*.pem
+*.p12
+*.pfx
+TASK.md
+PLANS.md
+design-qa.md
+docs/*-acceptance.md
+docs/*-qa.md
+docs/open-source-scope.md
+docs/pricing-draft.md
+docs/platform-api-plan.md
+docs/feature-parity.md
+docs/reference/source-manifest.json
+scripts/verify-live-*.mjs
+
+# Browser captures and isolated automation state; approved images live in docs/screenshots.
+output/
+.playwright-cli/

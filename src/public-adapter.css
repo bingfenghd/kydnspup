@@ -1,0 +1,125 @@
+/* Only sizing and customer-API controls differ from the copied DNSPup UI. */
+.ky-public .public-page-content { width: 1238px; max-width: 100%; min-width: 0; margin: 0 auto; }
+.ky-public :is(.home-filter-bar,.home-layout,.compact-probe-card,.map-summary-grid,.standard-results-panel,.tool-seo-content) { max-width: 100%; }
+.ky-public .site-top-right select { height: 34px; border: 1px solid #d8dee8; border-radius: 4px; background: #fff; color: #687589; padding: 0 8px; }
+.ky-site-name { color: #687589; font-size: 14px; }
+.ky-public .site-nav-inner { width: min(1238px,calc(100% - 48px)); }
+.ky-public .site-nav .nav-action { margin-left: auto; }
+.ky-public .probe-filter-panel { max-width: 100%; }
+.ky-public .probe-line-options .mobile-public-label,.ky-public .probe-line-prefix { display: none; }
+.ky-public .probe-form { flex-wrap: wrap; }
+.ky-public .probe-dns-options select { border: 1px solid #ced4da; border-radius: 3px; height: 30px; margin-left: 8px; padding: 0 8px; background: #fff; }
+.ky-public .probe-actions { flex-wrap: wrap; }
+.ky-connection { color: #687589; font-size: 12px; }
+.ky-notice { width: 1238px; max-width: 100%; margin: 8px auto; padding: 10px 12px; border: 1px solid #d8e4f8; border-radius: 4px; background: #f2f6fd; color: #526784; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; }
+.ky-notice small { width: 100%; }
+.ky-notice.error { color: #b42323; background: #fff4f4; border-color: #efcccc; }
+.ky-notice button,.ky-node-actions button { border: 0; background: transparent; color: #2f67dc; }
+.ky-node-panel { margin: 12px auto 0; border-top: 1px solid #e4e9f0; padding: 14px 0 2px; width: 992px; max-width: 100%; }
+.ky-node-filters { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; }
+.ky-node-filters input,.ky-node-filters select { min-width: 0; height: 34px; padding: 0 10px; border: 1px solid #ced4da; border-radius: 3px; background: #fff; }
+.ky-node-actions { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
+.ky-node-actions button { display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; }
+.ky-node-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+.ky-node-grid label { display: flex; align-items: center; gap: 8px; padding: 8px; border: 1px solid #dce4ed; border-radius: 3px; background: #fff; }
+.ky-node-grid label:has(:checked) { border-color: #81a8ec; background: #f3f7ff; }
+.ky-node-grid small { display: block; color: #7a8596; font-size: 11px; }
+.ky-public input[type=checkbox],.ky-public input[type=radio] { accent-color: #457df3; }
+.ky-result-actions { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 10px 14px; border-bottom: 1px solid #e6ebf2; }
+.ky-result-actions code { max-width: 100%; overflow-wrap: anywhere; }
+.ky-result-actions>div { display: flex; gap: 6px; flex-wrap: wrap; }
+.ky-result-actions button { display: inline-flex; align-items: center; gap: 5px; border: 1px solid #d8dee8; border-radius: 3px; background: #fff; color: #4266b5; font-size: 12px; padding: 5px 8px; }
+.ky-result-status { color: #33923b; font-size: 12px; }
+.ky-result-status.partial,.ky-result-status.timeout { color: #ad6514; }
+.ky-public .standard-probe-results-table { width: 100%; min-width: 850px; table-layout: auto; }
+.ky-public .standard-probe-results-table :is(th,td) { width: auto; padding: 10px 12px; overflow-wrap: anywhere; }
+.ky-public .standard-probe-results-table th:first-child { min-width: 190px; }
+.ky-public .standard-probe-results-table td small { display: block; color: #7a8596; font-size: 11px; }
+.ky-public .standard-probe-results-table pre { white-space: pre-wrap; margin: 0; font: inherit; }
+.ky-public .ky-dns-table { min-width: 650px; }
+.ky-latency { color: #209833; font-weight: 600; }
+.ky-raw { padding: 10px 14px; border-bottom: 1px solid #e6ebf2; }
+.ky-raw summary { color: #4266b5; cursor: pointer; }
+.ky-raw pre { overflow: auto; background: #f5f7fa; padding: 12px; border-radius: 3px; }
+.ky-traces h3 { margin: 0; font-size: 14px; font-weight: 500; }
+.ky-request-id { display: block; padding: 8px 14px; color: #7a8596; overflow-wrap: anywhere; }
+.ky-help-copy { padding: 18px; color: #687589; }
+.ky-help-copy h1 { font-size: 22px; color: #263345; }
+.ky-help-copy p { line-height: 1.8; }
+.ky-public .site-footer { min-width: 0; padding: 20px; text-align: center; color: #7d8795; }
+.ky-public .site-footer nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; }
+.ky-public .site-footer p { margin: 12px 0 0; }
+.mobile-site-menu-toggle,.mobile-nav-backdrop,.mobile-tool-tabs,.ky-mobile-language { display: none; }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .ky-public .site-nav-inner { width: 100%; }
+  .ky-public .nav-link { min-width: 0; padding: 0 9px; }
+  .ky-public .home-entry-body strong { max-width: 100%; font-size: 17px; }
+  .ky-public .home-entry-body em { position: static; margin-left: 52px; height: 18px; }
+  .ky-public .home-entry-body small { display: none; }
+  .ky-public .map-summary-grid { grid-template-columns: 1fr 1fr; }
+}
+html.mobile-home-layout .home-filters { grid-template-columns: repeat(3,minmax(0,1fr)); }
+html.mobile-home-layout .home-entry-tool { height: auto; }
+html.mobile-home-layout .home-filter { min-width: 0; }
+html.mobile-home-layout .home-menu-panel .nav-link,html.mobile-home-layout .home-menu-panel .nav-action { color: #2469f0; justify-content: flex-start; height: auto; margin: 0; gap: 6px; min-width: 0; white-space: normal; }
+html.mobile-home-layout .home-links-panel { max-width: 100%; margin-top: 12px; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .ky-mobile-language { display: block; margin-left: auto; }
+html.mobile-responsive-layout .ky-mobile-language select { width: 66px; height: 40px; border: 0; background: #fff; color: #687589; font-size: 12px; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .site-nav-inner { width: 100%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .site-nav .nav-action { margin-left: 0; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .probe-form { min-height: 0; gap: 10px; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .probe-input-wrap { width: 100%; flex-basis: 100%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .probe-filter-panel { gap: 12px; flex-wrap: wrap; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .probe-filter-panel select { max-width: 100px; }
+html.mobile-responsive-layout .ky-node-filters { grid-template-columns: 1fr 1fr; }
+html.mobile-responsive-layout .ky-node-filters>input { grid-column: 1/-1; }
+html.mobile-responsive-layout .ky-node-grid { grid-template-columns: 1fr; }
+html.mobile-responsive-layout .ky-node-actions { gap: 10px; flex-wrap: wrap; font-size: 12px; }
+html.mobile-responsive-layout .ky-notice { margin: 8px 0; width: 100%; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .summary-grid { max-width: 100%; }
+html.mobile-responsive-layout .ky-result-actions>div { gap: 4px; }
+html.mobile-responsive-layout .ky-result-actions button { min-height: 36px; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .ky-help-copy { margin: 12px; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .region-summary-tabs { flex-wrap: wrap; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .site-footer { font-size: 11px; }
+
+.ky-home-help { padding: 0; height: auto; overflow: visible; }
+.ky-home-tagline { margin: 12px 0; color: #687589; }
+.ky-extra-options { margin-top: 10px; flex-wrap: wrap; gap: 10px; }
+.ky-extra-options .probe-dns-options { flex-wrap: wrap; }
+.ky-probe-options { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 10px 0 0; color: #687589; font-size: 12px; }
+.ky-probe-options label,.ky-probe-options>span { display: inline-flex; align-items: center; gap: 6px; }
+.ky-probe-options input[type=number] { width: 64px; height: 30px; border: 1px solid #ced4da; border-radius: 3px; padding: 0 6px; }
+.ky-public .probe-input-wrap { position: relative; }
+.ky-public .standard-stats-panel { max-width: 100%; }
+.ky-public .standard-ip-stats { flex-wrap: wrap; }
+.ky-public .standard-stats-head { flex-wrap: wrap; gap: 8px; }
+.ky-public .standard-stats-head small { color: #687589; }
+.ky-public .standard-probe-results-table select { width: 110px; border: 1px solid #ced4da; border-radius: 3px; padding: 4px; background: #fff; }
+.ky-public .ky-http-head pre { max-width: 300px; max-height: 300px; overflow: auto; white-space: pre-wrap; font-size: 11px; }
+.ky-public .ky-http-head summary { color: #4266b5; cursor: pointer; }
+.ky-public .quality-chart { width: 180px; height: 32px; }
+html.mobile-responsive-layout .ky-extra-options .probe-dns-options { justify-content: flex-start; width: 100%; }
+html.mobile-responsive-layout .ky-probe-options>span { flex-wrap: wrap; }
+
+.ky-footer-language { display: inline-block; margin-top: 12px; }
+.ky-footer-language select { border: 1px solid #d8dee8; border-radius: 3px; color: #687589; background: #fff; padding: 4px 8px; }
+.ky-probe-preferences { margin: 4px 0; color: #8792a4; font-size: 12px; }
+.ky-probe-preferences summary { cursor: pointer; text-align: right; }
+.ky-probe-preferences[open] { background: #fff; border: 1px solid #d8dee8; padding: 10px; border-radius: 4px; }
+.ky-probe-options .soft-button { height: 30px; font-size: 12px; padding: 0 10px; }
+.ky-public .http-advanced-panel .field-note { padding: 0 10px; font-size: 12px; color: #8792a4; }
+.ky-public .region-summary-tabs { flex-wrap: wrap; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .probe-filter-panel { flex-wrap: wrap; }
+html.mobile-responsive-layout .ky-public .nav-group .nav-menu { position: static; }
+/* Customer API columns differ from the original mobile table's positional rules. */
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-probe-results-table-wrap { overflow-x: auto; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .standard-probe-results-table { min-width: 850px; table-layout: auto; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .standard-probe-results-table :is(th,td):nth-child(n) { display: table-cell; width: auto; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel.http-results .standard-probe-results-table :is(th,td):nth-child(n) { display: table-cell; width: auto; }
+html.mobile-responsive-layout .ky-public.public-app:not(.user-app) .standard-results-panel .standard-probe-results-table thead { top: 0; }
+
+.ky-public .screenshot-dialog-actions { display: flex; gap: 8px; }
+.ky-public .screenshot-dialog-actions button { min-width: 0; flex: 1; padding: 0 6px; }
+
+html.mobile-responsive-layout .ky-public .site-top-inner:has(.mobile-header-ad) .ky-mobile-language { display: none; }

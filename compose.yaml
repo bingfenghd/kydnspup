@@ -1,0 +1,31 @@
+services:
+  app:
+    image: ${KY_IMAGE:-kydnspup:0.1.0-local}
+    build: .
+    pull_policy: never
+    init: true
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      KY_HOST: 127.0.0.1
+      KY_PORT: ${KY_PORT:-4178}
+      KY_PUBLIC_ORIGIN: ${KY_PUBLIC_ORIGIN:?Set KY_PUBLIC_ORIGIN in .env}
+      KY_SETUP_TOKEN: ${KY_SETUP_TOKEN:?Set KY_SETUP_TOKEN in .env}
+      KY_DATA_DIR: /app/var
+      KY_TRUST_LOCAL_PROXY: "1"
+    volumes:
+      - ./var:/app/var
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 300s
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:'+process.env.KY_PORT+'/api/health',{signal:AbortSignal.timeout(3000)}).then(async r=>{if(!r.ok||!(await r.json()).ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 3

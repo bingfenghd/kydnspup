@@ -1,0 +1,33 @@
+{
+  "name": "kydnspup",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node server/index.mjs --dev",
+    "build": "tsc --noEmit && vite build",
+    "start": "node server/index.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "release:prepare": "node scripts/export-source.mjs"
+  },
+  "dependencies": {
+    "echarts": "6.1.0",
+    "echarts-for-react": "3.0.6",
+    "html2canvas": "1.4.1",
+    "lucide-react": "0.468.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "4.3.4",
+    "playwright": "1.61.1",
+    "typescript": "5.7.2",
+    "vite": "6.0.5"
+  },
+  "license": "MIT"
+}
