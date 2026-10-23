@@ -688,20 +688,15 @@ html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not
 
 html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-input-wrap:has(.target-history-menu) {
   align-self: stretch;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .probe-input-wrap > .target-history-menu,
 html.mobile-responsive-layout .public-app:not(.user-app) .compact-probe-card:not(.batch-tool-card) .trace-target-wrap > .target-history-menu {
-  position: absolute !important;
-  top: calc(100% + 4px) !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: 0 !important;
-  z-index: 1200;
+  position: static !important;
   width: 100% !important;
   max-height: min(42vh, 208px);
-  margin: 0 !important;
+  margin: 4px 0 0 !important;
 }
 
 html.mobile-responsive-layout .public-app:not(.user-app) .website-check-input-wrap,

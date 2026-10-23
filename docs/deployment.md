@@ -112,7 +112,7 @@ node --env-file=.env server/index.mjs
 | `KY_SETUP_TOKEN` | 空 | 对外部署首次创建管理员的初始化令牌 |
 | `KY_DATA_DIR` | `var` | 数据目录；Compose 固定为容器内 `/app/var` |
 | `KY_TRUST_LOCAL_PROXY` | `0` | 是否信任本机回环代理覆盖的 `X-Real-IP`；Compose 固定为 `1` |
-| `KY_IMAGE` | 不使用 | Compose 镜像标签；默认 `kydnspup:0.1.0-local` |
+| `KY_IMAGE` | 不使用 | Compose 镜像标签；默认 `kydnspup:0.1.1-local` |
 
 API Key / Secret 在站长管理端填写，不写入示例配置。真实 `.env`、数据库、加密密钥和运行日志均不能公开。
 

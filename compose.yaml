@@ -1,6 +1,6 @@
 services:
   app:
-    image: ${KY_IMAGE:-kydnspup:0.1.0-local}
+    image: ${KY_IMAGE:-kydnspup:0.1.1-local}
     build: .
     pull_policy: never
     init: true

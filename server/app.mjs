@@ -89,7 +89,7 @@ export function createApp({ dataDir, root, upstreamOptions, localSetup = true, s
       { id: 'nodes', status: connection?.nodes > 0 ? 'ok' : 'warning', message: connection?.nodes > 0 ? `上次核验取得 ${connection.nodes} 个授权节点` : '尚未确认可用授权节点' },
       { id: 'firstProbe', status: store.get('firstProbeAt') ? 'ok' : 'warning', message: store.get('firstProbeAt') ? '已取得至少一次有效检测结果' : '请前往前台选择目标，手动完成首次检测；会按套餐计量' }
     ];
-    return { version: '0.1.0', checkedAt: new Date().toISOString(), checks, onboarding: { credentialsSaved: configured, connectionCheckedAt: connection?.checkedAt || null, connectionOk: connection?.ok ?? null, firstProbeAt: store.get('firstProbeAt') }, calls: recentCalls().map(c => ({ id: c.id, created: c.created, tool: c.tool, status: c.status, requestId: c.request_id, errorCode: c.error_code, summary: c.summary })) };
+    return { version: '0.1.1', checkedAt: new Date().toISOString(), checks, onboarding: { credentialsSaved: configured, connectionCheckedAt: connection?.checkedAt || null, connectionOk: connection?.ok ?? null, firstProbeAt: store.get('firstProbeAt') }, calls: recentCalls().map(c => ({ id: c.id, created: c.created, tool: c.tool, status: c.status, requestId: c.request_id, errorCode: c.error_code, summary: c.summary })) };
   }
   function jobView(call) {
     const cached = replay.get(call.id), available = !!cached && cached.until > Date.now();
@@ -211,7 +211,7 @@ export function createApp({ dataDir, root, upstreamOptions, localSetup = true, s
         const realIP = trustLocalProxy && ['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(peer) && isIP(req.headers['x-real-ip'] || '') ? req.headers['x-real-ip'] : peer;
         const visitor = createHmac('sha256', store.key).update(realIP).digest('hex');
         if (req.method !== 'GET') requireOrigin(req);
-        if (req.method === 'GET' && pathname === '/api/health') return send(res, 200, { ok: true, version: '0.1.0' });
+        if (req.method === 'GET' && pathname === '/api/health') return send(res, 200, { ok: true, version: '0.1.1' });
         if (req.method === 'GET' && pathname === '/api/site') return send(res, 200, publicSettings());
         if (req.method === 'GET' && pathname === '/api/catalog') {
           throttle('catalog:' + visitor, 60);

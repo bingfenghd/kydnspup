@@ -101,6 +101,21 @@ test('six-tool result layouts preserve original columns and real missing values'
 
   // Resolve the lazy map once; capture its real option to check displayed data and responsive settings.
   await new Promise(resolve => setImmediate(resolve));
+  await t.test('map uses fastest measured regional response while retaining timeout markers and unavailable regions', () => {
+    for (const tool of ['ping', 'tcping', 'http', 'dns']) {
+      const values = [0, 24, 300].map(value => ({ ...row, avg_latency: value, total_time: value, elapsedMs: value, http_status: 200 }));
+      const rows = [...values, { ...row, status: 'timeout' }, { ...row, status: 'unavailable' }, { ...row, region: '北京', status: 'timeout' }, { ...row, region: '上海', status: 'unavailable' }];
+      render(tool, { [tool === 'dns' ? 'rows' : 'results']: rows });
+      const map = globalThis.__resultsMapOption.series[0];
+      assert.equal(map.data.find(r => r.name === '广东省').value, 0, tool);
+      assert.equal(map.data.find(r => r.name === '广东省').partialTimeout, true);
+      assert.equal(map.markPoint.data.length, 1);
+      assert.equal(map.data.find(r => r.name === '北京市').value, tool === 'http' ? 100000 : 3001);
+      assert.equal(map.data.find(r => r.name === '上海市').value, tool === 'http' ? 100001 : 4001);
+      render(tool, { [tool === 'dns' ? 'rows' : 'results']: values.slice(1) });
+      assert.equal(globalThis.__resultsMapOption.series[0].data[0].value, 24, tool);
+    }
+  });
   render('ping', { results: [{ ...row, location: '<script>unsafe</script>' }] });
   const tooltip = globalThis.__resultsMapOption.tooltip.formatter({ name: '广东省', data: { rows: [{ ...row, location: '<script>unsafe</script>' }] } });
   assert.match(tooltip, /map-result-tooltip-title">广东</);

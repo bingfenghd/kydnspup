@@ -3,6 +3,7 @@
   ".env.example",
   ".gitignore",
   ".npmrc",
+  "CHANGELOG.md",
   "Dockerfile",
   "LICENSE",
   "README.md",

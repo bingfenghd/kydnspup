@@ -270,7 +270,7 @@ function Summary({ rows, progress: taskProgress, tool, busy, t, logo, selectedRe
   const mapData = [...grouped].map(([name, regionRows]) => {
     const values = regionRows.map(r => latency(r, tool)).filter(measured);
     const timeouts = regionRows.filter(r => ['timeout', 'bad'].includes(r.status)).length;
-    return { name, value: values.length ? Math.round(values.reduce((a, b) => a + b, 0) / values.length) : timeouts ? http ? 100000 : 3001 : http ? 100001 : 4001, rows: regionRows, partialTimeout: timeouts > 0 && values.length > 0, selected: name === selectedRegion };
+    return { name, value: values.length ? Math.round(Math.min(...values)) : timeouts ? http ? 100000 : 3001 : http ? 100001 : 4001, rows: regionRows, partialTimeout: timeouts > 0 && values.length > 0, selected: name === selectedRegion };
   });
   const pieces = http ? [
     { min: 100001, label: t('unavailable'), color: '#cbd5e1' }, { min: 100000, max: 100000, label: t('timeout'), color: '#f01818' }, { min: 10001, max: 99999, label: '>10s', color: '#ff9924' }, { min: 3001, max: 10000, label: '3s-10s', color: '#f7e733' }, { min: 1001, max: 3000, label: '1s-3s', color: '#b6f24c' }, { min: 501, max: 1000, label: '0.5s-1s', color: '#38dd47' }, { min: 0, max: 500, label: '<=0.5s', color: '#1fad18' }

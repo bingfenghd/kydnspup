@@ -12,6 +12,6 @@ if (process.argv.includes('--dev')) {
   vite = await createServer({ root, server: { middlewareMode: true, hmr: { server: app.server } }, appType: 'spa' });
   app.setMiddleware(vite.middlewares);
 }
-app.server.listen(port, host, () => console.log(`kydnspup 0.1.0 · http://${host}:${port}\n站长管理：http://${host}:${port}/admin`));
+app.server.listen(port, host, () => console.log(`kydnspup 0.1.1 · http://${host}:${port}\n站长管理：http://${host}:${port}/admin`));
 async function shutdown() { await vite?.close(); await app.close(); process.exit(0); }
 process.on('SIGTERM', shutdown); process.on('SIGINT', shutdown);
