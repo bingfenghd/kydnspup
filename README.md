@@ -1,6 +1,6 @@
-# KY DNSPup — ITDOG 风格拨测 / Ping 测试建站程序
+# KY DNSPup — 复刻 ITDOG 风格拨测测速软件/ Ping 测试建站程序
 
-面向想自行搭建 ITDOG 类在线 Ping、多地拨测、TCPing 和网站测速站的站长。KY DNSPup 提供检测前台、站长管理端和 DNSPup 客户 API 对接，可使用自己的域名、站点名称和广告位。
+面向想自行搭建测速拨测类在线 Ping、多地拨测、TCPing 和网站测速站的站长。KY DNSPup 提供检测前台、站长管理端和 DNSPup 客户 API 对接，可使用自己的域名、站点名称和广告位。
 
 **ITDOG 仅用于描述同类产品和使用场景。本项目与 ITDOG 无官方关联，不是 ITDOG 官方开源版，也不包含 ITDOG 的节点服务。** 本项目的节点检测由 DNSPup API 提供，首次使用需要在 DNSPup 注册并开通 API 授权。项目代码以 [MIT 许可证](LICENSE) 开源；节点服务的费用与授权单独计算。
 
